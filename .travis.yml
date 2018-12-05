@@ -1,0 +1,11 @@
+sudo: required
+
+services:
+    - docker
+
+install:
+    - docker build -t theia/oml2 .
+    - docker run --net=host --name oml2 -d -p 127.0.0.1:3000:3000 theia/oml2
+
+script:
+    - ./docker-test.sh
