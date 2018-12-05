@@ -1,11 +1,12 @@
 {
-  "name": "oml2-theia-extension",
+  "name": "@theia/oml2",
   "version": "0.1.0",
   "description": "An extension for Theia connection language support for the Oml2 DSL",
-  "author": "Project Theia",
+  "author": "Open CAESAR",
   "license": "Apache-2.0",
   "keywords": [
-    "theia-extension"
+    "theia-extension",
+    "oml2"
   ],
   "config": {
     "oml2_version": "0.1.0"

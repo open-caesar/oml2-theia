@@ -1,6 +1,6 @@
 {
     "private": true,
-    "name": "oml2-app",
+    "name": "electron-app",
     "version": "0.1.0",
     "license": "Apache-2.0",
     "dependencies": {
@@ -19,7 +19,7 @@
         "@theia/terminal": "next",
         "@theia/typescript": "next",
         "@theia/workspace": "next",
-        "oml2-theia-extension": "0.1.0"
+        "@theia/oml2": "0.1.0"
     },
     "devDependencies": {
         "@theia/cli": "next"
@@ -27,10 +27,14 @@
     "scripts": {
         "prepare": "theia build --mode development",
         "start": "theia start",
-        "start:backend:socket": "node ./src-gen/backend/main.js --LSP_PORT=5007 --port=3000 --log-level=debug",
         "watch": "theia build --watch --mode development"
     },
     "theia": {
-        "target": "browser"
+        "target": "electron",
+        "backend": {
+            "config": {
+                "startupTimeout": -1
+            }
+        }
     }
 }
