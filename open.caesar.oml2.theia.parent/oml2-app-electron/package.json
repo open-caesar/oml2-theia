@@ -1,0 +1,40 @@
+{
+    "private": true,
+    "name": "oml2-app-electron",
+    "version": "0.1.0",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "@theia/core": "next",
+        "@theia/editor": "next",
+        "@theia/file-search": "next",
+        "@theia/filesystem": "next",
+        "@theia/git": "next",
+        "@theia/languages": "next",
+        "@theia/markers": "next",
+        "@theia/monaco": "next",
+        "@theia/navigator": "next",
+        "@theia/preferences": "next",
+        "@theia/process": "next",
+        "@theia/search-in-workspace": "next",
+        "@theia/terminal": "next",
+        "@theia/typescript": "next",
+        "@theia/workspace": "next",
+        "oml2-theia-extension": "0.1.0"
+    },
+    "devDependencies": {
+        "@theia/cli": "next"
+    },
+    "scripts": {
+        "prepare": "theia build --mode development",
+        "start": "theia start",
+        "watch": "theia build --watch --mode development"
+    },
+    "theia": {
+        "target": "electron",
+        "backend": {
+            "config": {
+                "startupTimeout": -1
+            }
+        }
+    }
+}

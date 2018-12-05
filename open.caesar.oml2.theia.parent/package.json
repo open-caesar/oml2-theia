@@ -2,13 +2,18 @@
   "private": true,
   "scripts": {
     "prepare": "lerna run prepare",
-    "build": "lerna run build",
-    "watch": "lerna run watch"
+    "rebuild:browser": "theia rebuild:browser",
+    "rebuild:electron": "theia rebuild:electron",
+    "publish:latest": "lerna publish --registry=https://registry.npmjs.org/ --exact --skip-git",
+    "publish:next": "lerna publish --registry=https://registry.npmjs.org/ --exact --canary=next --npm-tag=next --skip-git --yes",
+    "update": "git pull origin master && git submodule foreach git pull origin master"
   },
   "devDependencies": {
-    "lerna": "2.4.0"
+    "lerna": "^2.4.0"
   },
   "workspaces": [
-    "theia-oml2-extension", "app"
+    "oml2-theia-extension",
+    "oml2-app",
+    "oml2-app-electron"
   ]
 }
