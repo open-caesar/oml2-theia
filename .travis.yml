@@ -1,19 +1,19 @@
 sudo: required
+
 language: node_js
+
 node_js: '8'
-git:
-  depth: 1
-cache:
-  yarn: true
-  directories:
-  - node_modules
-branches:
-  only:
-  - master
+
 install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.12.3
   - export PATH=$HOME/.yarn/bin:$PATH ;
+
 before_script:
   - cd open.caesar.oml2.theia.parent
+
 script:
-  - yarn
+- yarn
+
+env:
+  global:
+    secure: zs4oYaOFJZbU1VVNKplJwOsewU3sNujt9cYUzD1SpMrjqYQHEbrBXpX+WFET0nhWnCvb45i/Ui/vsUkAEPRFtn09ruF4mR+5pi5B5vt35fDqmK+vbXnpSuFGnHBQHV9TnvcLqaFkS+dlMV68DZXboxHt/X2Y8wFxVwvUKSQ0YBEdyiYWsQK3FM99c0bPzb26lG8Ps/iqOrOp/mfzd6YsN0oInqAAgTICLYIzq5w9MfjxGI9QEc6yxkwm6Mcgfq+BUut52ylDb+f5Sn12sr+m7BGZZ3J/NPL35KhR31KHuCMkr4fyxtL0mnfpstKRZYqYkBOj3rJefUZ1MtWWuCYfHMiBc9W/FOVaTA/25ls6cwUymwzqRa2nET3j01j0XQvPJgeuaX48Gz/nUVBmiqPlfZmtN5peFkZHPtYOa1rtcavtr7RvE900mhh1PubRrILJKGxmY4U/VGX3szRn7bc5jTHMsrzAChuFvvIcmRX3B+7D5258zl2fsGyhHvw3O1tSF0Y3JSP+BstyTfCH6sYPvwWYRCOIYxddyqvQirD7koN68Why9A4kZ2pLVMBxFjVksSfgAQ3cVz4c5Vbpo3fa0ciMecgMEObutOVtRKERWhh7xtxZeHPevFXBSAskEruPcKwIMshBfBlM2MVPAyPor141dzv2zrnLHqY0Nk+BzTk=
