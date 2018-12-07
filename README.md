@@ -31,7 +31,7 @@ Change directory
     
     cd oml2-theia/open.caesar.oml2.theia.parent/
 
-## Running the browser example
+## Running the browser application
 
     yarn rebuild:browser
     cd browser-app
@@ -39,7 +39,7 @@ Change directory
 
 Open http://localhost:3000 in the browser.
 
-## Running the Electron example
+## Running the Electron application
 
     yarn rebuild:electron
     cd electron-app
