@@ -8,29 +8,39 @@
 
 An extension for the Theia IDE to support the [OML2 language server](https://github.com/open-caesar/oml2-language-server)
 
-### Build
+## Getting started
 
-Requirements: Python 2.x, Java 8.x, node 8.x, yarn >1.0.2, a C++ compiler, curl, unzip.
+Install [nvm](https://github.com/creationix/nvm#install-script).
 
-```bash
-git clone https://github.com/open-caesar/oml2-theia.git && \
-cd oml2-theia/open.caesar.oml2.theia.parent/ && \
-yarn
-```
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
 
-### Run
+Install npm and node.
 
-The browser version:
-```bash
-yarn rebuild:browser && \
-cd oml2-app && \
-yarn start
-```
-Then point your browser to `http://localhost:3000`
+    nvm install 8
+    nvm use 8
 
-The Electron version:
-```bash
-yarn rebuild:electron && \
-cd oml2-app-electron && \
-yarn start
-```
+Install yarn.
+
+    npm install -g yarn
+
+Clone the code
+  
+    git clone https://github.com/open-caesar/oml2-theia.git
+
+Change directory
+    
+    cd oml2-theia/open.caesar.oml2.theia.parent/
+
+## Running the browser example
+
+    yarn rebuild:browser
+    cd browser-app
+    yarn start
+
+Open http://localhost:3000 in the browser.
+
+## Running the Electron example
+
+    yarn rebuild:electron
+    cd electron-app
+    yarn start
