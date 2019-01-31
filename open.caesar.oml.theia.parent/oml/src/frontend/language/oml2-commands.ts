@@ -4,28 +4,28 @@ import { EditorCommands } from "@theia/editor/lib/browser";
 import { Workspace, WorkspaceEdit } from "@theia/languages/lib/browser";
 
 /**
- * Show OML2 references
+ * Show OML references
  */
-export const SHOW_OML2_REFERENCES: Command = {
-    id: 'oml2.show.references'
+export const SHOW_OML_REFERENCES: Command = {
+    id: 'oml.show.references'
 };
 
 /**
  * Apply Workspace Edit
  */
 export const APPLY_WORKSPACE_EDIT: Command = {
-    id: 'oml2.apply.workspaceEdit'
+    id: 'oml.apply.workspaceEdit'
 };
 
 @injectable()
-export class Oml2CommandContribution implements CommandContribution {
+export class OmlCommandContribution implements CommandContribution {
 
     constructor(
         @inject(Workspace) protected readonly workspace: Workspace
     ) { }
 
     registerCommands(commands: CommandRegistry): void {
-        commands.registerCommand(SHOW_OML2_REFERENCES, {
+        commands.registerCommand(SHOW_OML_REFERENCES, {
             execute: (uri: string, position: Position, locations: Location[]) =>
                 commands.executeCommand(EditorCommands.SHOW_REFERENCES.id, uri, position, locations)
         });

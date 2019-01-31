@@ -12,35 +12,35 @@ An extension for the Theia IDE to support the [OML language server](https://gith
 
 Install [nvm](https://github.com/creationix/nvm#install-script).
 
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
 
 Install npm and node.
 
-    nvm install 8
-    nvm use 8
+nvm install 8
+nvm use 8
 
 Install yarn.
 
-    npm install -g yarn
+npm install -g yarn
 
 Clone the code
-  
-    git clone https://github.com/open-caesar/oml-theia.git
+
+git clone https://github.com/open-caesar/oml-theia.git
 
 Change directory
-    
-    cd oml-theia/open.caesar.oml.theia.parent/
+
+cd oml-theia/open.caesar.oml.theia.parent/
 
 ## Running the browser application
 
-    yarn rebuild:browser
-    cd browser-app
-    yarn start
+yarn rebuild:browser && \
+cd browser-app && \
+yarn start
 
 Open http://localhost:3000 in the browser.
 
 ## Running the Electron application
 
-    yarn rebuild:electron
-    cd electron-app
-    yarn start
+yarn rebuild:electron && \
+cd electron-app && \
+yarn start

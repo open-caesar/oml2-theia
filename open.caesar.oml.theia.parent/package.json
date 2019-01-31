@@ -12,7 +12,8 @@
     "lerna": "^2.4.0"
   },
   "workspaces": [
-    "oml2",
+    "oml",
+    "oml-sprotty",
     "browser-app",
     "electron-app"
   ]

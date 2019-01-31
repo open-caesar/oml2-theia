@@ -15,13 +15,13 @@ export class ContextMenuCommands {
         const removeCommand = this.registry.registerCommand({ id: id }, {
             execute: () => {
                 const currentEditor = this.editorManager.currentEditor
-                if (this.isOml2Editor(currentEditor)) {
+                if (this.isOmlEditor(currentEditor)) {
                     execute(currentEditor.editor.document.uri)
                 }
             },
-            isVisible: () => this.isOml2Editor(this.editorManager.currentEditor)
+            isVisible: () => this.isOmlEditor(this.editorManager.currentEditor)
         });
-        const removeMenu = this.menuRegistry.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_oml2"), {
+        const removeMenu = this.menuRegistry.registerMenuAction(EDITOR_CONTEXT_MENU.concat("2_oml"), {
             commandId: id,
             label: id
         });
@@ -33,9 +33,9 @@ export class ContextMenuCommands {
         }
     }
 
-    private isOml2Editor(widget: EditorWidget | undefined): widget is EditorWidget {
+    private isOmlEditor(widget: EditorWidget | undefined): widget is EditorWidget {
         if (widget)
-            return widget.editor.document.languageId === 'oml2';
+            return widget.editor.document.languageId === 'oml';
         else
             return false;
     }

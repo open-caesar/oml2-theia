@@ -16,17 +16,17 @@ function getPort(): number | undefined {
 }
 
 @injectable()
-class Oml2LanguageServerContribution extends BaseLanguageServerContribution {
+class OmlLanguageServerContribution extends BaseLanguageServerContribution {
 
-    readonly id = 'oml2'
-    readonly name = 'Oml2'
+    readonly id = 'oml'
+    readonly name = 'Oml'
 
     readonly description = {
-        id: 'oml2',
-        name: 'Oml2',
-        documentSelector: ['oml2'],
+        id: 'oml',
+        name: 'Oml',
+        documentSelector: ['oml'],
         fileEvents: [
-            '**/*.oml2'
+            '**/*.oml'
         ]
     }
 
@@ -41,7 +41,7 @@ class Oml2LanguageServerContribution extends BaseLanguageServerContribution {
             socket.connect(socketPort)
         } else {
             const folder = path.join(__dirname, '../../build')
-            const files = fs.readdirSync(folder).filter(el => el.startsWith("oml2-language-server"))
+            const files = fs.readdirSync(folder).filter(el => el.startsWith("oml-language-server"))
             const jar = path.resolve(folder + '/' + files[0])
 
             const command = 'java'
@@ -58,5 +58,5 @@ class Oml2LanguageServerContribution extends BaseLanguageServerContribution {
 }
 
 export default new ContainerModule(bind => {
-    bind(LanguageServerContribution).to(Oml2LanguageServerContribution).inSingletonScope()
+    bind(LanguageServerContribution).to(OmlLanguageServerContribution).inSingletonScope()
 })

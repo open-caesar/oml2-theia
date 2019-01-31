@@ -13,7 +13,7 @@ import { MonacoQuickOpenService } from '@theia/monaco/lib/browser/monaco-quick-o
 import { MonacoDiffNavigatorFactory } from '@theia/monaco/lib/browser/monaco-diff-navigator-factory';
 
 @injectable()
-export class Oml2MonacoEditorProvider extends MonacoEditorProvider {
+export class OmlMonacoEditorProvider extends MonacoEditorProvider {
 
     constructor(
         @inject(MonacoEditorService) protected readonly editorService: MonacoEditorService,

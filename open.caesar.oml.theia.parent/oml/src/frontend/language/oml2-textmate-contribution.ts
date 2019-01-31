@@ -2,23 +2,23 @@ import { injectable } from 'inversify';
 import { LanguageGrammarDefinitionContribution, TextmateRegistry } from '@theia/monaco/lib/browser/textmate';
 
 @injectable()
-export class Oml2TextmateContribution implements LanguageGrammarDefinitionContribution {
+export class OmlTextmateContribution implements LanguageGrammarDefinitionContribution {
 
     registerTextmateLanguage(registry: TextmateRegistry) {
-        const scope = 'source.oml2';
-        const oml2Grammar = require('../../../data/grammars/oml2.tmlanguage.json');
+        const scope = 'source.oml';
+        const omlGrammar = require('../../../data/grammars/oml.tmlanguage.json');
         registry.registerTextmateGrammarScope(scope, {
             async getGrammarDefinition() {
                 return {
                     format: 'json',
-                    content: oml2Grammar
+                    content: omlGrammar
                 };
             }
         });
-        registry.registerGrammarConfiguration('oml2', {
+        registry.registerGrammarConfiguration('oml', {
             tokenizerOption: {
             }
         });
-        registry.mapLanguageIdToTextmateGrammar('oml2', scope);
+        registry.mapLanguageIdToTextmateGrammar('oml', scope);
     }
 }
