@@ -25,7 +25,7 @@ npm install -g yarn
 
 Clone the code
 
-git clone https://github.com/open-caesar/oml-theia.git
+git clone --recursive https://github.com/open-caesar/oml-theia.git
 
 Change directory
 
