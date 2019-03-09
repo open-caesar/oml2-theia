@@ -1,3 +1,3 @@
-[submodule "open.caesar.oml.theia.parent/oml-sprotty"]
-	path = open.caesar.oml.theia.parent/oml-sprotty
-	url = https://github.com/open-caesar/oml-sprotty
+[submodule "io.opencaesar.oml.theia.parent/oml-sprotty"]
+	path = io.opencaesar.oml.theia.parent/oml-sprotty
+	url = https://github.com/opencaesar/oml-sprotty
