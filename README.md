@@ -1,12 +1,9 @@
 # OML Theia Extension
 
-[![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-code%20now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/open-caesar/oml-theia)
-[![Build Status](https://travis-ci.org/open-caesar/oml-theia.svg?branch=master)](https://travis-ci.org/open-caesar/oml-theia)
-[![Open questions](https://img.shields.io/badge/Open-questions-lightgrey.svg?style=flat-curved)](https://github.com/open-caesar/oml-theia/labels/question)
-[![Open bugs](https://img.shields.io/badge/Open-bugs-red.svg?style=flat-curved)](https://github.com/open-caesar/oml-theia/labels/bug)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-yellowgreen.svg?style=flat-curved)](https://github.com/open-caesar/oml-theia/labels/help%20wanted)
+[![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-code%20now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/opencaesar/oml-theia)
+[![Build Status](https://travis-ci.org/opencaesar/oml-theia.svg?branch=master)](https://travis-ci.org/opencaesar/oml-theia)
 
-An extension for the Theia IDE to support the [OML language server](https://github.com/open-caesar/oml-language-server)
+An extension for the Theia IDE to support the [OML language server](https://github.com/opencaesar/oml-language-server)
 
 ## Getting started
 
@@ -23,24 +20,37 @@ Install yarn.
 
 npm install -g yarn
 
-Clone the code
-
-git clone --recursive https://github.com/open-caesar/oml-theia.git
-
-Change directory
-
-cd oml-theia/open.caesar.oml.theia.parent/
+## Clone
+```
+  git clone --recursive https://github.com/opencaesar/oml-theia.git
+```
 
 ## Running the browser application
-
+```
+cd oml-theia && \
+cd io.opencaesar.oml.theia.parent && \
 yarn rebuild:browser && \
 cd browser-app && \
 yarn start
+```
 
 Open http://localhost:3000 in the browser.
 
 ## Running the Electron application
-
+```
+cd oml-theia && \
+cd io.opencaesar.oml.theia.parent && \
 yarn rebuild:electron && \
 cd electron-app && \
 yarn start
+```
+
+## Release
+
+Replace \<version\> by the version, e.g., 1.2
+```
+  cd oml-theia
+  git tag -a v<version> -m "v<version>"
+  git push origin v<version>
+```
+

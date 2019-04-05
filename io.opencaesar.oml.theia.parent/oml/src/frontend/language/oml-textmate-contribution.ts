@@ -6,7 +6,7 @@ export class OmlTextmateContribution implements LanguageGrammarDefinitionContrib
 
     registerTextmateLanguage(registry: TextmateRegistry) {
         const scope = 'source.oml';
-        const omlGrammar = require('../../../data/grammars/oml.tmlanguage.json');
+        const omlGrammar = require('../../../data/grammars/oml.tmLanguage.json');
         registry.registerTextmateGrammarScope(scope, {
             async getGrammarDefinition() {
                 return {
