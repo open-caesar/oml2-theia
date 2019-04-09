@@ -28,7 +28,7 @@ npm install -g yarn
 ## Running the browser application
 ```
 cd oml-theia && \
-cd io.opencaesar.oml.theia.parent && \
+cd io.opencaesar.oml.theia && \
 yarn rebuild:browser && \
 cd browser-app && \
 yarn start
@@ -39,7 +39,7 @@ Open http://localhost:3000 in the browser.
 ## Running the Electron application
 ```
 cd oml-theia && \
-cd io.opencaesar.oml.theia.parent && \
+cd io.opencaesar.oml.theia && \
 yarn rebuild:electron && \
 cd electron-app && \
 yarn start

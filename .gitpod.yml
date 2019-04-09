@@ -3,5 +3,5 @@ ports:
 tasks:
   - init: yarn
   command: >
-    cd io.opencaesar.oml.theia.parent/browser-app && \
+    cd io.opencaesar.oml.theia/browser-app && \
     yarn start

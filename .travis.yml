@@ -9,7 +9,7 @@ install:
   - export PATH=$HOME/.yarn/bin:$PATH ;
 
 before_script:
-  - cd io.opencaesar.oml.theia.parent
+  - cd io.opencaesar.oml.theia
 
 script:
 - yarn
