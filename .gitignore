@@ -8,3 +8,4 @@ lib
 webpack.config.js
 src-gen
 **/*.log
+.vscode/

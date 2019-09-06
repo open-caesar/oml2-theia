@@ -32,6 +32,7 @@ class OmlLanguageServerContribution extends BaseLanguageServerContribution {
 
     start(clientConnection: IConnection): void {
         let socketPort = getPort();
+        console.log("SOCKET PORT:", socketPort);
         if (socketPort) {
             const socket = new net.Socket()
             const serverConnection = createSocketConnection(socket, socket, () => {
@@ -47,6 +48,8 @@ class OmlLanguageServerContribution extends BaseLanguageServerContribution {
             const command = 'java'
             const args: string[] = [
                 '-jar',
+                // Uncomment the next line to attach a debugger. Use a socket listener at port 8000
+                // '-agentlib:jdwp=transport=dt_socket,address=127.0.0.1:8000,server=n,suspend=n',
                 jar
             ]
 

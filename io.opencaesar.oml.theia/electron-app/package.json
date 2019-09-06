@@ -1,11 +1,12 @@
 {
     "private": true,
     "name": "electron-app",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "license": "Apache-2.0",
     "dependencies": {
         "@theia/core": "next",
         "@theia/editor": "next",
+        "@theia/electron": "next",
         "@theia/file-search": "next",
         "@theia/filesystem": "next",
         "@theia/git": "next",
@@ -19,7 +20,7 @@
         "@theia/terminal": "next",
         "@theia/typescript": "next",
         "@theia/workspace": "next",
-        "@theia/oml": "0.1.0"
+        "@theia/oml": "0.2.0"
     },
     "devDependencies": {
         "@theia/cli": "next"
