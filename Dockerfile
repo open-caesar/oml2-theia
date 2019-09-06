@@ -1,5 +1,7 @@
 FROM node:10-jessie
 
+USER root:root
+
 ARG version=latest
 
 RUN apt update && apt upgrade -y && apt install libx11-dev libxkbfile-dev -y
