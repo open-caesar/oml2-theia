@@ -41,6 +41,8 @@ cd browser-app && \
 yarn start
 ```
 
+If you would like to run the latest version of the language server, you will need to clone the language server [here](https://github.com/opencaesar/oml) and follow the build instructions. Once you build the language server, drag the `oml-language-server-<version>.jar` file from `io.opencaesar.oml.parent/io.opencaesar.oml.dsl.ide/build/libs` to `io.opencaesar.oml.theia/oml/build` in this repository.
+
 Open http://localhost:3000 in the browser.
 
 ## Running the Electron application
