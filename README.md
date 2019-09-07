@@ -28,7 +28,7 @@ npm install -g yarn
 
 ## Clone
 ```shell
-  git clone --recursive https://github.com/opencaesar/oml-theia.git
+git clone --recursive https://github.com/opencaesar/oml-theia.git
 ```
 
 ## Running the browser application
@@ -58,8 +58,8 @@ yarn start
 
 Replace \<version\> by the version, e.g., 1.2
 ```shell
-  cd oml-theia
-  git tag -a v<version> -m "v<version>"
-  git push origin v<version>
+cd oml-theia
+git tag -a v<version> -m "v<version>"
+git push origin v<version>
 ```
 
