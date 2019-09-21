@@ -42,7 +42,7 @@ class OmlLanguageServerContribution extends BaseLanguageServerContribution {
             socket.connect(socketPort)
         } else {
             const folder = path.join(__dirname, '../../build')
-            const files = fs.readdirSync(folder).filter(el => el.startsWith("oml-language-server"))
+            const files = fs.readdirSync(folder).filter(el => el.startsWith("oml-server"))
             const jar = path.resolve(folder + '/' + files[0])
 
             const command = 'java'

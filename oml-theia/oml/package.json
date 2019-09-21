@@ -9,7 +9,7 @@
     "oml"
   ],
   "config": {
-    "oml_version": "0.1.0"
+    "oml_version": "0.3.0"
   },
  "dependencies": {
     "@theia/core": "next",
@@ -25,7 +25,7 @@
   "scripts": {
     "prepare": "yarn run clean && yarn install:languageserver && yarn run build",
     "install:languageserver": "rimraf -rf ./build && mkdir build && yarn download:languageserver",
-    "download:languageserver": "curl -L -o build/oml-language-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml/releases/download/v$npm_package_config_oml_version/oml-language-server-$npm_package_config_oml_version.jar",
+    "download:languageserver": "curl -L -o build/oml-server-$npm_package_config_oml_version.jar https://github.com/opencaesar/oml-server/releases/download/v$npm_package_config_oml_version/oml-server-$npm_package_config_oml_version.jar",
     "clean": "rimraf lib",
     "build": "tsc && yarn lint",
     "lint": "tslint -c ./tslint.json --project ./tsconfig.json",

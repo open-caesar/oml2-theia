@@ -12,10 +12,10 @@ COPY . /home/theia
 
 # ADD $version.package.json ./package.json
 
-RUN cd io.opencaesar.oml.theia && yarn --cache-folder ./ycache && rm -rf ./ycache
+RUN cd oml-theia && yarn --cache-folder ./ycache && rm -rf ./ycache
 
 EXPOSE 3000
 
 ENV SHELL /bin/bash
 
-CMD cd io.opencaesar.oml.theia/browser-app && yarn start /home/project --hostname=0.0.0.0
+CMD cd oml-theia/browser-app && yarn start /home/project --hostname=0.0.0.0
