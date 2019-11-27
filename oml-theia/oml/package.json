@@ -1,6 +1,6 @@
 {
   "name": "@theia/oml",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "description": "An extension for Theia connection language support for the Oml DSL",
   "author": "Open CAESAR",
   "license": "Apache-2.0",
@@ -9,7 +9,7 @@
     "oml"
   ],
   "config": {
-    "oml_version": "0.3.0"
+    "oml_version": "0.5.0"
   },
  "dependencies": {
     "@theia/core": "next",
@@ -20,7 +20,7 @@
     "@types/node": "^8.0.14",
     "sprotty-theia": "next",
     "sprotty": "next",
-    "oml-sprotty": "0.2.0"
+    "oml-sprotty": "0.5.*"
   },
   "scripts": {
     "prepare": "yarn run clean && yarn install:languageserver && yarn run build",

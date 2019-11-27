@@ -1,7 +1,7 @@
 {
     "private": true,
     "name": "browser-app",
-    "version": "0.2.0",
+    "version": "0.5.0",
     "license": "Apache-2.0",
     "dependencies": {
         "@theia/core": "next",
@@ -22,7 +22,7 @@
         "@theia/file-search": "next",
         "@theia/merge-conflicts": "next",
         "@theia/search-in-workspace": "next",
-        "@theia/oml": "0.2.0"
+        "@theia/oml": "0.5.*"
     },
     "devDependencies": {
         "@theia/cli": "next"
