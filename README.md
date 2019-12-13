@@ -26,6 +26,12 @@ Install yarn.
   npm install -g yarn
 ```
 
+Install (only on Linux)
+
+```shell
+   apt-get install libxkbfile1 libxkbfile-dev
+```
+
 ## Clone
 ```shell
   git clone --recursive https://github.com/opencaesar/oml-theia.git
