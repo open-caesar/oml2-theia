@@ -52,7 +52,7 @@ Install (only on Linux)
   yarn start
 ```
 
-If you would like to run the latest version of the language server, you will need to clone the language server [here](https://github.com/opencaesar/oml-server) and follow the build instructions. Once you build the language server, drag the `oml-server-<version>.jar` file from `oml-server/io.opencaesar.oml.dsl.ide/build/libs` to `oml-theia/oml/build` in this repository.
+If you would like to run the latest version of the language server, you will need to clone the language server [here](https://github.com/opencaesar/oml) and follow the build instructions. Once you build the language server, drag the `oml-server-<version>.jar` file from `io.opencaesar.oml.parent/io.opencaesar.oml.dsl.ide.server/build/libs` to `oml-theia/oml/build` in this repository.
 
 Open http://localhost:3000 in the browser.
 
@@ -69,7 +69,7 @@ Open http://localhost:3000 in the browser.
 Replace \<version\> by the version, e.g., 1.2
 ```shell
   cd oml-theia
-  git tag -a v<version> -m "v<version>"
-  git push origin v<version>
+  git tag -a <version> -m "<version>"
+  git push origin <version>
 ```
 
