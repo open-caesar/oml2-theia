@@ -3,7 +3,7 @@
 [![Gitpod - Code Now](https://img.shields.io/badge/Gitpod-code%20now-blue.svg?longCache=true)](https://gitpod.io#https://github.com/opencaesar/oml-theia)
 [![Build Status](https://travis-ci.org/opencaesar/oml-theia.svg?branch=master)](https://travis-ci.org/opencaesar/oml-theia)
 
-A Theia IDE extension that supports [OML](https://opencaesar.github.io/oml-spec) v0.5.0
+A Theia IDE extension that supports [OML](https://opencaesar.github.io/oml-spec)
 
 ## Getting started
 
