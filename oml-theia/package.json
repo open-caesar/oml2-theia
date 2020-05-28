@@ -27,7 +27,8 @@
   ],
   "dependencies": {
     "@theia/node-pty": "0.7.8-theia004",
-    "nsfw": "1.2.5",
-    "find-git-repositories": "0.1.0"
+    "cross-var": "^1.1.0",
+    "find-git-repositories": "0.1.0",
+    "nsfw": "1.2.5"
   }
 }
