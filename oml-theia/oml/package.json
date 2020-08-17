@@ -9,7 +9,7 @@
     "oml"
   ],
   "config": {
-    "oml_version": "0.7.1"
+    "oml_version": "0.7.3"
   },
  "dependencies": {
     "@theia/core": "next",
