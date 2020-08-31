@@ -45,33 +45,22 @@ Install (only on Linux)
   cd oml-theia && \
   yarn
 ```
+Note: If you would like to have the latest version of the language server, you will need to clone the language server [here](https://github.com/opencaesar/oml) and follow the build instructions. Once you build the language server, drag the `oml-server-<version>.jar` file from `io.opencaesar.oml.parent/io.opencaesar.oml.dsl.ide.server/build/libs` to `oml-theia/oml/build` in this repository.
+
+## Clean
+If you have to clean the build artifacts, use:
+```shell
+  ./clean.sh
+```
 
 ## Run the browser application
 ```shell
-  cd oml-theia && \
-  yarn rebuild:browser && \
-  cd browser-app && \
-  yarn start
+  ./start-browser.sh
 ```
-
-If you would like to run the latest version of the language server, you will need to clone the language server [here](https://github.com/opencaesar/oml) and follow the build instructions. Once you build the language server, drag the `oml-server-<version>.jar` file from `io.opencaesar.oml.parent/io.opencaesar.oml.dsl.ide.server/build/libs` to `oml-theia/oml/build` in this repository.
-
 Open http://localhost:3000 in the browser.
 
 ## Run the electron application
 ```shell
-  cd oml-theia && \
-  yarn rebuild:electron && \
-  cd electron-app && \
-  yarn start
+  ./start-electron.sh
 ```
-
-## Release
-
-Replace \<version\> by the version, e.g., 1.2
-```shell
-  cd oml-theia
-  git tag -a <version> -m "<version>"
-  git push origin <version>
-```
-
+The electron UI should open up in a window
