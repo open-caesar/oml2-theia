@@ -5,7 +5,6 @@
 A Theia IDE extension that supports [OML](https://opencaesar.github.io/oml-spec)
 
 ## Getting started
-
 Install [nvm](https://github.com/creationix/nvm#install-script).
 
 ```shell
@@ -24,6 +23,9 @@ Install yarn.
 ```shell
   npm install -g yarn
 ```
+
+Install (only on MacOs)
+If you don't have Xcode command line tools, or have an incomplete/old version, install them by following instructions in this [blog article](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d)
 
 Install (only on Linux)
 
