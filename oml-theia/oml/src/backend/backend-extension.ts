@@ -1,6 +1,7 @@
 import { injectable, ContainerModule } from "inversify"
 import { BaseLanguageServerContribution, LanguageServerContribution, IConnection } from "@theia/languages/lib/node"
 import { createSocketConnection } from 'vscode-ws-jsonrpc/lib/server'
+import {OML_LANGUAGE_FILE_EXTENSION, OML_LANGUAGE_SERVER_ID, OML_LANGUAGE_SERVER_NAME} from "../common";
 import * as path from 'path'
 import * as net from 'net'
 import * as fs from 'fs'
@@ -18,15 +19,15 @@ function getPort(): number | undefined {
 @injectable()
 class OmlLanguageServerContribution extends BaseLanguageServerContribution {
 
-    readonly id = 'oml'
-    readonly name = 'Oml'
+    readonly id = OML_LANGUAGE_SERVER_ID
+    readonly name = OML_LANGUAGE_SERVER_NAME
 
     readonly description = {
-        id: 'oml',
-        name: 'Oml',
-        documentSelector: ['oml'],
+        id: this.id,
+        name: this.name,
+        documentSelector: [this.id],
         fileEvents: [
-            '**/*.oml'
+            '**/*' + OML_LANGUAGE_FILE_EXTENSION
         ]
     }
 
@@ -35,11 +36,11 @@ class OmlLanguageServerContribution extends BaseLanguageServerContribution {
         console.log("SOCKET PORT:", socketPort);
         if (socketPort) {
             const socket = new net.Socket()
+            socket.connect(socketPort)
             const serverConnection = createSocketConnection(socket, socket, () => {
                 socket.destroy()
             });
             this.forward(clientConnection, serverConnection)
-            socket.connect(socketPort)
         } else {
             const folder = path.join(__dirname, '../../build')
             const files = fs.readdirSync(folder).filter(el => el.startsWith("oml-server"))
@@ -53,8 +54,7 @@ class OmlLanguageServerContribution extends BaseLanguageServerContribution {
                 jar
             ]
 
-            const serverConnection = this.createProcessStreamConnection(command, args)
-            this.forward(clientConnection, serverConnection)
+            this.createProcessStreamConnectionAsync(command, args).then((serverConnection: IConnection) => this.forward(clientConnection, serverConnection))
         }
     }
 

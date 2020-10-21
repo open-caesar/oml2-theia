@@ -10,3 +10,5 @@ webpack.config.js
 src-gen
 **/*.log
 .vscode/
+*.iml
+.idea

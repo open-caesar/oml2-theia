@@ -1,12 +1,13 @@
 import { inject, injectable, multiInject } from 'inversify'
 import { LanguageClientFactory, Languages, Workspace } from '@theia/languages/lib/browser'
 import { DiagramManagerProvider, DiagramLanguageClientContribution } from 'sprotty-theia/lib'
+import {OML_LANGUAGE_SERVER_ID, OML_LANGUAGE_SERVER_NAME, OML_LANGUAGE_FILE_EXTENSION} from "../../common";
 
 @injectable()
 export class OmlLanguageClientContribution extends DiagramLanguageClientContribution {
 
-    readonly id = 'oml'
-    readonly name = 'Oml'
+    readonly id = OML_LANGUAGE_SERVER_ID
+    readonly name = OML_LANGUAGE_SERVER_NAME
 
     constructor(
         @inject(Workspace) protected readonly workspace: Workspace,
@@ -19,7 +20,7 @@ export class OmlLanguageClientContribution extends DiagramLanguageClientContribu
 
     protected get globPatterns() {
         return [
-            '**/*.oml'
+            '**/*' + OML_LANGUAGE_FILE_EXTENSION
         ]
     }
 

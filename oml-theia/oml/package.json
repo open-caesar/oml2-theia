@@ -1,6 +1,6 @@
 {
   "name": "@theia/oml",
-  "version": "0.7.1",
+  "version": "0.7.5",
   "description": "An extension for Theia connection language support for the Oml DSL",
   "author": "Open CAESAR",
   "license": "Apache-2.0",
@@ -9,17 +9,15 @@
     "oml"
   ],
   "config": {
-    "oml_version": "0.7.3"
+    "oml_version": "0.7.4"
   },
  "dependencies": {
-    "@theia/core": "next",
-    "@theia/editor": "next",
-    "@theia/filesystem": "next",
-    "@theia/languages": "next",
-    "@theia/monaco": "next",
-    "@types/node": "^8.0.14",
-    "sprotty-theia": "next",
-    "sprotty": "next",
+    "@theia/core": "1.0.0",
+    "@theia/editor": "1.0.0",
+    "@theia/filesystem": "1.0.0",
+    "@theia/languages": "1.0.0",
+    "@theia/monaco": "1.0.0",
+    "sprotty-theia": "0.8.0",
     "oml-sprotty": "0.7.*"
   },
   "scripts": {
@@ -32,9 +30,10 @@
     "watch": "tsc -w"
   },
   "devDependencies": {
-    "rimraf": "^2.6.1",
-    "tslint": "^5.5.0",
-    "typescript": "2.9.1"
+    "rimraf": "latest",
+    "tslint": "latest",
+    "typescript": "latest",
+    "cross-var": "latest"
   },
   "files": [
     "lib",

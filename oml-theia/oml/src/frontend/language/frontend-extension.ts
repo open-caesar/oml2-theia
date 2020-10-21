@@ -1,56 +1,57 @@
-import { ContainerModule, interfaces } from 'inversify'
-import { CommandContribution } from '@theia/core/lib/common'
+import { FrontendApplicationContribution, KeybindingContribution, OpenHandler, WidgetFactory } from '@theia/core/lib/browser'
+import { CommandContribution, MenuContribution } from '@theia/core/lib/common'
 import { LanguageClientContribution } from '@theia/languages/lib/browser'
-import { OmlLanguageClientContribution } from './oml-language-client-contribution'
-import { DiagramConfiguration } from 'sprotty-theia/lib'
+import { LanguageGrammarDefinitionContribution } from '@theia/monaco/lib/browser/textmate'
+
+import { ContainerModule, interfaces } from 'inversify'
+import { DiagramConfiguration, DiagramManager, DiagramManagerProvider, LSDiagramCommandContribution,
+    LSDiagramKeybindingContribution } from 'sprotty-theia'
+
 import { OmlDiagramConfiguration } from '../diagram/di.config'
-import { DiagramManager, DiagramManagerProvider } from 'sprotty-theia/lib'
+import { OmlDiagramLanguageClient } from '../diagram/oml-diagram-language-client'
 import { OmlDiagramManager } from '../diagram/oml-diagram-manager'
-import { FrontendApplicationContribution, OpenHandler, WidgetFactory } from '@theia/core/lib/browser'
-import { configuration } from './oml-monaco-language'
-import { OmlCommandContribution } from './oml-commands'
+import { OmlCommandContribution, OmlMemuContribution } from './oml-contributions'
 import { MonacoEditorProvider } from '@theia/monaco/lib/browser/monaco-editor-provider'
 import { OmlMonacoEditorProvider } from "../monaco/oml-monaco-editor-provider"
 import 'sprotty/css/sprotty.css'
 import 'sprotty-theia/css/theia-sprotty.css'
 import { ContextMenuCommands } from './dynamic-commands'
 import { ThemeManager } from '../diagram/theme-manager';
-import { LanguageGrammarDefinitionContribution } from '@theia/monaco/lib/browser/textmate/textmate-contribution'
 import { OmlTextmateContribution } from './oml-textmate-contribution'
-import { OmlDiagramLanguageClient } from '../diagram/oml-diagram-language-client';
+import { OmlLanguageClientContribution } from './oml-language-client-contribution'
 
 export default new ContainerModule((bind: interfaces.Bind, unbind: interfaces.Unbind, isBound: interfaces.IsBound, rebind: interfaces.Rebind) => {
-    monaco.languages.register({
-        id: 'oml',
-        aliases: ['Oml', 'oml'],
-        extensions: ['.oml'],
-        mimetypes: ['text/oml']
-    })
-    monaco.languages.onLanguage('oml', () => {
-        monaco.languages.setLanguageConfiguration('oml', configuration)
-    });
+
+    bind(CommandContribution).to(OmlCommandContribution)
+    bind(MenuContribution).to(OmlMemuContribution)
+
     bind(OmlLanguageClientContribution).toSelf().inSingletonScope()
     bind(LanguageClientContribution).toService(OmlLanguageClientContribution)
     bind(LanguageGrammarDefinitionContribution).to(OmlTextmateContribution).inSingletonScope()
 
-    bind(CommandContribution).to(OmlCommandContribution).inSingletonScope();
-    bind(ContextMenuCommands).to(ContextMenuCommands).inSingletonScope()
-    rebind(MonacoEditorProvider).to(OmlMonacoEditorProvider).inSingletonScope()
+    bind(OmlDiagramLanguageClient).toSelf().inSingletonScope()
+    bind(CommandContribution).to(LSDiagramCommandContribution).inSingletonScope()
+    bind(KeybindingContribution).to(LSDiagramKeybindingContribution).inSingletonScope()
 
     bind(DiagramConfiguration).to(OmlDiagramConfiguration).inSingletonScope()
-    bind(OmlDiagramLanguageClient).toSelf().inSingletonScope()
     bind(OmlDiagramManager).toSelf().inSingletonScope()
+    bind(FrontendApplicationContribution).toService(OmlDiagramManager)
+    bind(OpenHandler).toService(OmlDiagramManager)
+    bind(WidgetFactory).toService(OmlDiagramManager)
+
+
     bind(DiagramManagerProvider).toProvider<DiagramManager>(context => {
         return () => {
             return new Promise<DiagramManager>((resolve) => {
                 let diagramManager = context.container.get<OmlDiagramManager>(OmlDiagramManager);
-                resolve(diagramManager);
+                resolve(diagramManager)
             })
         }
-    }) // .whenTargetNamed('oml-diagram');
+    })
 
-    bind(FrontendApplicationContribution).toService(OmlDiagramManager)
-    bind(OpenHandler).toService(OmlDiagramManager)
-    bind(WidgetFactory).toService(OmlDiagramManager)
+    rebind(MonacoEditorProvider).to(OmlMonacoEditorProvider).inSingletonScope()
+
+    // Is this really functional?
+    bind(ContextMenuCommands).to(ContextMenuCommands).inSingletonScope()
     bind(ThemeManager).toSelf().inSingletonScope()
 })

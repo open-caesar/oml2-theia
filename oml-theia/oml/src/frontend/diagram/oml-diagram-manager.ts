@@ -13,11 +13,12 @@ import { ThemeManager } from './theme-manager';
 import { WidgetManager, QuickPickService, Widget } from '@theia/core/lib/browser';
 import { MonacoWorkspace } from "@theia/monaco/lib/browser/monaco-workspace";
 import { OmlDiagramWidget } from '../widgets/oml-diagram-widget';
+import {OML_DIAGRAM_TYPE} from "./di.config";
 
 @injectable()
 export class OmlDiagramManager extends DiagramManager {
 
-    readonly diagramType = 'oml-diagram'
+    readonly diagramType = OML_DIAGRAM_TYPE
     readonly iconClass = 'fa fa-microchip'
 
     _diagramConnector: TheiaSprottyConnector
