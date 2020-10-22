@@ -10,10 +10,11 @@ import { EditorManager } from '@theia/editor/lib/browser'
 import { OmlDiagramLanguageClient } from "./oml-diagram-language-client";
 import { TheiaSprottyConnector, LSTheiaSprottyConnector, TheiaFileSaver, DiagramManager, DiagramWidgetOptions } from 'sprotty-theia/lib'
 import { ThemeManager } from './theme-manager';
-import { WidgetManager, QuickPickService, Widget } from '@theia/core/lib/browser';
+import { WidgetManager, QuickPickService } from '@theia/core/lib/browser';
 import { MonacoWorkspace } from "@theia/monaco/lib/browser/monaco-workspace";
 import { OmlDiagramWidget } from '../widgets/oml-diagram-widget';
 import {OML_DIAGRAM_TYPE} from "./di.config";
+import {DiagramWidget} from "sprotty-theia/lib/theia/diagram-widget";
 
 @injectable()
 export class OmlDiagramManager extends DiagramManager {
@@ -37,7 +38,7 @@ export class OmlDiagramManager extends DiagramManager {
         })
     }
 
-    async createWidget(options?: any): Promise<Widget> {
+    async createWidget(options?: any): Promise<DiagramWidget> {
         console.log("CREATING DIAGRAM WIDGET")
         if (DiagramWidgetOptions.is(options)) {
             const clientId = this.createClientId();
@@ -49,7 +50,9 @@ export class OmlDiagramManager extends DiagramManager {
         throw Error('DiagramWidgetFactory needs DiagramWidgetOptions but got ' + JSON.stringify(options));
     }
 
-    get diagramConnector() {
+    // TS2611: 'diagramConnector' is defined as a property in class 'DiagramManager', but is overridden here in 'OmlDiagramManager' as an accessor.
+    // @ts-ignore
+    get diagramConnector() {
         return this._diagramConnector
     }
 

@@ -12,12 +12,13 @@
     "oml_version": "0.7.4"
   },
  "dependencies": {
-    "@theia/core": "1.6.0",
-    "@theia/editor": "1.6.0",
-    "@theia/filesystem": "1.6.0",
-    "@theia/languages": "1.6.0",
-    "@theia/monaco": "1.6.0",
-    "sprotty-theia": "0.9.0",
+    "@theia/core": "0.15.0",
+    "@theia/editor": "0.15.0",
+    "@theia/filesystem": "0.15.0",
+    "@theia/languages": "0.15.0",
+    "@theia/monaco": "0.15.0",
+    "sprotty-theia": "0.8.0",
+    "sprotty": "next",
     "oml-sprotty": "0.7.*"
   },
   "scripts": {
@@ -30,10 +31,9 @@
     "watch": "tsc -w"
   },
   "devDependencies": {
-    "rimraf": "latest",
-    "tslint": "latest",
-    "typescript": "latest",
-    "cross-var": "latest"
+    "rimraf": "^2.6.1",
+    "tslint": "^5.5.0",
+    "typescript": "2.9.1"
   },
   "files": [
     "lib",

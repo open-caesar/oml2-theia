@@ -3,7 +3,8 @@ import { MonacoEditor } from "@theia/monaco/lib/browser/monaco-editor";
 import { MonacoEditorModel } from '@theia/monaco/lib/browser/monaco-editor-model';
 import { MonacoEditorProvider } from "@theia/monaco/lib/browser/monaco-editor-provider";
 import { MonacoEditorService } from "@theia/monaco/lib/browser/monaco-editor-service";
-import { MonacoToProtocolConverter, ProtocolToMonacoConverter } from 'monaco-languageclient';
+import { ProtocolToMonacoConverter } from 'sprotty-theia/node_modules/@theia/editor/node_modules/monaco-languageclient/lib/monaco-converter'
+import { MonacoToProtocolConverter } from 'sprotty-theia/node_modules/@theia/editor/node_modules/monaco-languageclient/lib/monaco-converter'
 import { EditorPreferences } from "@theia/editor/lib/browser";
 import { MonacoTextModelService } from "@theia/monaco/lib/browser/monaco-text-model-service";
 import { MonacoContextMenuService } from "@theia/monaco/lib/browser/monaco-context-menu";

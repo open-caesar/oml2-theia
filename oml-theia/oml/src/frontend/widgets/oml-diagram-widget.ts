@@ -26,6 +26,8 @@ export class OmlDiagramWidget extends DiagramWidget {
 
     protected readonly searchBox: SearchBox;
 
+    // TS2611: 'modelSource' is defined as a property in class 'DiagramWidget', but is overridden here in 'OmlDiagramWidget' as an accessor.
+    // @ ts-ignore
     get modelSource(): TheiaDiagramServer {
         return this.diContainer.get(TYPES.ModelSource);
     }

@@ -13,13 +13,11 @@
     "refresh:electron": "yarn refresh && cd electron-app && yarn prepare",
     "publish:latest": "lerna publish --registry=https://registry.npmjs.org/ --exact --skip-git",
     "publish:next": "lerna publish --registry=https://registry.npmjs.org/ --exact --canary=next --npm-tag=next --skip-git --yes",
-    "update": "git pull origin master && git submodule foreach git pull origin master",
-    "download:plugins": "theia download:plugins"
+    "update": "git pull origin master && git submodule foreach git pull origin master"
   },
   "devDependencies": {
-    "@theia/cli": "latest",
-    "fstream": "latest",
-    "lerna": "latest"
+    "fstream": "^1.0.0",
+    "lerna": "^2.4.0"
   },
   "workspaces": [
     "oml",
@@ -28,18 +26,9 @@
     "electron-app"
   ],
   "dependencies": {
-    "@theia/callhierarchy": "1.6.0",
-    "@theia/file-search": "1.6.0",
-    "@theia/git": "1.6.0",
-    "@theia/markers": "1.6.0",
-    "@theia/messages": "1.6.0",
-    "@theia/mini-browser": "1.6.0",
-    "@theia/navigator": "1.6.0",
-    "@theia/outline-view": "1.6.0",
-    "@theia/plugin-ext-vscode": "1.6.0",
-    "@theia/preferences": "1.6.0",
-    "@theia/preview": "1.6.0",
-    "@theia/search-in-workspace": "1.6.0",
-    "@theia/terminal": "1.6.0"
+    "@theia/node-pty": "0.7.8-theia004",
+    "cross-var": "^1.1.0",
+    "find-git-repositories": "0.1.0",
+    "nsfw": "1.2.5"
   }
 }
