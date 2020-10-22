@@ -1,6 +1,6 @@
 {
   "name": "@theia/oml",
-  "version": "0.7.1",
+  "version": "0.7.5",
   "description": "An extension for Theia connection language support for the Oml DSL",
   "author": "Open CAESAR",
   "license": "Apache-2.0",
@@ -9,7 +9,7 @@
     "oml"
   ],
   "config": {
-    "oml_version": "0.7.3"
+    "oml_version": "0.7.5"
   },
  "dependencies": {
     "@theia/core": "next",
