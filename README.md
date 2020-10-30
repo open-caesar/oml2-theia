@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/opencaesar/oml-theia.svg?branch=master)](https://travis-ci.org/opencaesar/oml-theia)
 
-A Theia IDE extension that supports [OML](https://opencaesar.github.io/oml-spec)
+A Theia IDE extension that supports [OML](https://opencaesar.github.io/oml-spec).
+
+> IMPORTANT: We are no longer actively maintaining this repo (the Theia extension for OML) with the latest releases of the OML LSP server. The last supported OML version is 0.7.5. However, we are still actively maintaining the [VSCode extension for OML](https://github.com/opencaesar/oml-vscode), which provides similar functions, and works in the [VSCode](https://code.visualstudio.com/) (desktop) IDE and the [Gitpod](https://www.gitpod.io/) (web) IDE. If there is interest in maintaining a Theia IDE extension for OML, please contact [Maged Elaasar](mailto:melaasar@gmail.com) to discuss options.
 
 ## Getting started
 Install [nvm](https://github.com/creationix/nvm#install-script).
@@ -14,8 +16,8 @@ Install [nvm](https://github.com/creationix/nvm#install-script).
 Install npm and node.
 
 ```shell
-  nvm install 10
-  nvm use 10
+  nvm install 8
+  nvm use 8
 ```
 
 Install yarn.
